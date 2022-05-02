@@ -44,7 +44,12 @@ function renderDogs() {
                             "Accept": "application/json"
                         },
                         body: JSON.stringify(dogObj)}).
-                        then(res => res.json()).then(data => console.log(data))
+                        then(res => res.json()).then(data => {
+                            console.log(data)
+                            tdName.textContent = e.target[0].value
+                            tdBreed.textContent = e.target[1].value
+                            tdSex.textContent = e.target[2].value
+                        })
                 }))
             })
             tBody.append(tr)
